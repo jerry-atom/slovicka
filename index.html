@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Slovíčka</title>
+  <link href="./main.css" rel="stylesheet">
+</head>
+
+<body class="theme-dark">
+  <header id="menu" class="theme-color-bg">
+    <a href="#lesson">Lekce</a>
+    <a href="#settings">Nastavení</a>
+    <a href="#questions">Slovíčka</a>
+  </header>
+  <main class="theme-color-bg"></main>
+  <!--
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(
+            (registration) => console.log('ServiceWorker registration successful with scope: ', registration.scope),
+            (error) => console.error('ServiceWorker registration failed: ', error)
+          )
+      })
+    }
+  </script>
+  -->
+  <script src="./dist/main.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,247 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", "Roboto", sans-serif;
+  font-size: 1em;
+}
+
+/**********/
+/* LAYOUT */
+/**********/
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+  line-height: 60px;
+}
+
+header a {
+  text-decoration: none;
+  padding: 0 20px;
+  display: inline-block;
+}
+
+main {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+label {
+  display: flex;
+  padding: 5px 0px 10px 0px;
+  flex-direction: column;
+}
+
+input, select, textarea {
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1em;
+  font-family: "Ubuntu", "Roboto", sans-serif;
+  border-style: solid;
+  border-width: 1px;
+  outline: none;
+}
+label input,
+label select,
+label textarea {
+  margin-top: 10px;
+}
+
+/**********/
+/* THEME */
+/**********/
+
+/* LIGHT */
+.theme-light {
+  background-color: white;
+  color: black;
+}
+.theme-light a {
+  color: black;
+}
+body[data-page="lesson"].theme-light #menu a[href="#lesson"],
+body[data-page="settings"].theme-light  #menu a[href="#settings"],
+body[data-page="questions"].theme-light  #menu a[href="#questions"] {
+  background-color: rgba(0, 0, 0, .1);
+}
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  background-color: white;
+  border-color: silver;
+  color: black;
+}
+
+.theme-light input:focus,
+.theme-light select:active,
+.theme-light textarea:active {
+  border-color: goldenrod;
+}
+
+/* DARK */
+.theme-dark {
+  background-color: black;
+  color: white;
+}
+.theme-dark a {
+  color: white;
+}
+.theme-dark header {
+  background-color: rgba(255, 255, 255, .2);
+}
+body[data-page="lesson"].theme-dark #menu a[href="#lesson"],
+body[data-page="settings"].theme-dark  #menu a[href="#settings"],
+body[data-page="questions"].theme-dark  #menu a[href="#questions"] {
+  background-color: rgba(255, 255, 255, .2);
+}
+.theme-dark input,
+.theme-dark select,
+.theme-dark textarea {
+  background-color: black;
+  border-color: gray;
+  color: white;
+}
+
+.theme-dark input:focus,
+.theme-dark select:active,
+.theme-dark textarea:active {
+  border-color: darkgoldenrod;
+}
+
+/**********/
+/* LESSON */
+/**********/
+
+body[data-page="lesson"] main {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+body[data-page="lesson"] #word {
+  font-weight: bold;
+  padding: 20px 0;
+  border-bottom: 2px solid silver;
+}
+
+body[data-page="lesson"] .answers {
+  overflow-y: auto;
+  list-style-type: none;
+}
+
+body[data-page="lesson"] .answer {
+  padding: 10px;
+  border-bottom: 1px solid silver;
+  font-style: italic;
+}
+
+body[data-page="lesson"] .answer:last-child {
+  border-bottom: none;
+}
+
+body[data-page="lesson"].theme-light .answer:active {
+  background-color: lightskyblue;
+}
+
+body[data-page="lesson"].theme-light .answer.correct {
+  background-color: lightgreen;
+}
+
+body[data-page="lesson"].theme-light .answer.wrong {
+  background-color: lightcoral;
+}
+
+body[data-page="lesson"].theme-dark .answer:active {
+  background-color: darkblue;
+}
+
+body[data-page="lesson"].theme-dark .answer.correct {
+  background-color: darkgreen;
+}
+
+body[data-page="lesson"].theme-dark .answer.wrong {
+  background-color: darkred;
+}
+
+/*************/
+/* QUESTIONS */
+/*************/
+
+body[data-page="questions"] main a {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-bottom: 1px solid silver;
+  text-decoration: none;
+}
+body[data-page="questions"] main a:last-child {
+  border-bottom: none;
+}
+body[data-page="questions"] main a.hidden {
+  display: none;
+}
+body[data-page="questions"] button[name="create"] {
+  position: fixed;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+  line-height: 50px;
+  font-size: 1em;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: red;
+  color: white;
+  outline: none;
+}
+
+body[data-page="questions"].theme-light .questions {
+  color: black;
+}
+body[data-page="questions"].theme-dark .questions {
+  color: white;
+}
+
+body[data-page="question"] .history {
+  display: flex;
+  flex-direction: column;
+}
+body[data-page="question"] .history > div {
+  padding: 10px;
+  font-size: 1em;
+  line-height: 1em;
+}
+body[data-page="question"] .icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+body[data-page="question"] .icon.success {
+  background-color: green;
+}
+body[data-page="question"] .icon.failure {
+  background-color: red;
+}
